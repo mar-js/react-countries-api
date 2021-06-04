@@ -24,6 +24,34 @@ export function getCountries(region = 'all') {
   }
 }
 
+export function getCountriesSearch(country) {
+  return async function (dispatch, getState) {
+    dispatch({
+      type: 'GET_COUNTRIES_SEARCH',
+      payload: country
+    })
+
+    try {
+      const RESPONSE = country !== '' && await fetch(`https://restcountries.eu/rest/v2/name/${country}?fullText=true?fields=flag;name;population;region;capital;alpha2Code`)
+      const DATA = await RESPONSE.json()
+
+      dispatch({
+        type: 'GET_COUNTRIES_SEARCH_SUCCESS',
+        payload: [ ...DATA ]
+      })
+
+    } catch (error) {
+      console.error(error)
+
+      dispatch({
+        type: 'GET_COUNTRIES_SEARCH_ERROR',
+        payload: error.message
+      })
+
+    }
+  }
+}
+
 export function getCountry(name) {
   return async function (dispatch, getState) {
     dispatch({ type: 'GET_COUNTRY' })
