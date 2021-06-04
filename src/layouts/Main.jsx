@@ -1,13 +1,13 @@
 import React from 'react'
 
 import Form from '@/components/Form'
-import Country from '@/components/Country'
+import Countries from '@/components/Countries'
 
 function Main() {
   return (
     <main className="container">
       <Form />
-      <Country />
+      <Countries />
     </main>
   )
 }

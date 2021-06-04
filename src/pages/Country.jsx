@@ -1,9 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
-function Country() {
+import { getCountry } from '@/redux/actions/'
+
+import Section from '@/layouts/Section'
+import DetailsCountry from '@/components/DetailsCountry'
+
+import { connect } from 'react-redux'
+
+function Country({ match: { params: { country } }, getCountry }) {
+  useEffect(() => {
+    getCountry(country)
+  }, [ country ])
+
   return (
-    <div />
+    <Section>
+      <DetailsCountry />
+    </Section>
   )
 }
 
-export default Country
+const STATE_TO_DISPATCH_PROPS = { getCountry }
+
+export default connect(null, STATE_TO_DISPATCH_PROPS)(Country)

@@ -4,9 +4,7 @@ import Main from '@/layouts/Main'
 
 function Home() {
   return (
-    <>
-      <Main />
-    </>
+    <Main />
   )
 }
 

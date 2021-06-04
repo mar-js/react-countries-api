@@ -2,8 +2,8 @@ import React from 'react'
 
 function Form() {
   return (
-    <form className="row justify-md-content-between align-items-center mb-4">
-      <div className="col-12 col-md-10">
+    <form className="row justify-content-md-between align-items-center mb-4">
+      <div className="col-12 col-md-5">
         <div className="input-group align-items-center">
           <span className="input-group-text h-100 bg-white border-end-0 ">
             <i className="bi bi-search" />
@@ -16,7 +16,7 @@ function Form() {
           />
         </div>
       </div>
-      <div className="col-12 col-md-2">
+      <div className="col-12 col-md-3">
         <select className="form-select">
           <option defaultValue>Filter by Region</option>
           <option value="1">One</option>

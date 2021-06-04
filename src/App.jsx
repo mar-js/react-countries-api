@@ -1,5 +1,10 @@
 import React, { Fragment } from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+
+import {
+  BrowserRouter,
+  Switch,
+  Route
+} from 'react-router-dom'
 
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -17,13 +22,10 @@ function App() {
     <Fragment>
       <BrowserRouter>
         <Header />
-
         <Switch>
           <Route exact path="/" component={ Home } />
-
-          <Route exact path="/:id" component={ Country } />
+          <Route exact path="/:country" component={ Country } />
         </Switch>
-
         { /* <Footer /> */ }
       </BrowserRouter>
     </Fragment>

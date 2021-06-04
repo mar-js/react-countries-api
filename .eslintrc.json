@@ -5,6 +5,7 @@
     "node": true
   },
   "extends": [
+    "eslint:recommended",
     "plugin:react/recommended",
     "standard",
     "prettier"
@@ -26,8 +27,13 @@
     "react-hooks",
     "prettier"
   ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "rules": {
-    "array-element-newline": [2, "always"],
+    "array-element-newline": [2, { "multiline": true, "minItems": 3 }],
     "array-bracket-newline": [2, { "multiline": true, "minItems": 3 }],
     "array-bracket-spacing": [
       2,
@@ -203,8 +209,9 @@
     "no-void": 0,
     "no-warning-comments": 0,
     "no-with": 2,
-    "object-curly-newline": 0,
+    "object-curly-newline": [2, { "multiline": true, "minProperties": 3 }],
     "object-curly-spacing": [2, "always"],
+    "object-property-newline": [2, {"allowAllPropertiesOnSameLine": false }],
     "one-var": 0,
     "operator-assignment": 0,
     "operator-linebreak": [2, "after"],
@@ -271,7 +278,6 @@
     ],
     "space-in-parens": [2, "never"],
     "space-infix-ops": 2,
-    "keyword-spacing": 2,
     "space-unary-ops": [
       2,
       {
@@ -280,6 +286,7 @@
       }
     ],
     "spaced-comment": [0, "always"],
+    "keyword-spacing": 2,
     "strict": 0,
     "semi-style": [2, "last"],
     "semi": [2, "never"],

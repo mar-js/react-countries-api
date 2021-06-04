@@ -59,6 +59,10 @@ module.exports = {
       {
         test: /\.(woff|woff2)$/,
         type: 'asset/inline'
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        type: 'asset'
       }
     ]
   },

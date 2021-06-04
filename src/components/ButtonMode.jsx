@@ -2,7 +2,7 @@ import React from 'react'
 
 function ButtonMode() {
   return (
-    <button className="btn btn-light  d-flex justify-content-center align-items-center"
+    <button className="btn btn-light d-flex justify-content-center align-items-center"
       type="button"
     >
       <i className="bi bi-moon mx-2" />
