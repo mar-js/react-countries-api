@@ -1,9 +1,10 @@
-export function getCountries() {
+export function getCountries(region = 'all') {
   return async function (dispatch, getState) {
     dispatch({ type: 'GET_COUNTRIES' })
 
     try {
-      const RESPONSE = await fetch('https://restcountries.eu/rest/v2/all?fields=flag;name;population;region;capital;alpha2Code')
+      const RESPONSE = region === 'all' ? await fetch(`https://restcountries.eu/rest/v2/${region}?fields=flag;name;population;region;capital;alpha2Code`) :
+        await fetch(`https://restcountries.eu/rest/v2/region/${region}?fields=flag;name;population;region;capital;alpha2Code`)
       const DATA = await RESPONSE.json()
 
       dispatch({

@@ -8,13 +8,18 @@ import thunk from 'redux-thunk'
 
 import reducer from './reducers/'
 
-import { useEffect } from 'react'
-
-import { getCountries } from './actions'
+import { getCountries } from './actions/'
 
 const INITIAL_STATE = {
   search: '',
-  filter: '',
+  filter: [
+    'africa',
+    'americas',
+    'asia',
+    'europe',
+    'oceania',
+    'polar'
+  ],
   countries: [],
   detailsCountry: {},
   fetching: false
